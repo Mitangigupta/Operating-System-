@@ -1,28 +1,40 @@
-*DATE: 31-8-26*
-*EXP. No. 4*
+*DATE:* 7-9-26
+*EXP. No.:* 5
 
-*Experiment 4 -> To study and execute their process management commands and use Vim and Nano text editors for creating, editing and managing text files in Ubuntu Linux*
+*Experiment 5(a) Write a shell script that takes a command line argument and reports on whether it is a directory or a file*
 
-*Procedure: Process Management command ->*
-1) Open terminal in ubuntu
-2) Check running process -> ps
-3) Display all running process -> ps aux
-4) Continuously monitor processes -> top
-5) Find a process by name - pgrep process_name
-6) Terminate a process - kill PID
-7) Run a process in the background -> command &
-8) View background jobs -> jobs
+*Theory*
+A shell script is a program written using shell commands. In Linux command-line arguments can be passed to a shell script while executing it.
 
-*(B) Using Nano Editor -*
-1) Create /open a file -> nano http://test.txt
-2) Type some text
-3) Press Ctrl + O -> Enter to save
-4) Press Ctrl + X to exit
+`$1` represents the first command line argument passed to script
 
-*(C) Using Vi Editor:*
-1) Create / Open a file -> vi http://test.txt
-2) Type some text
-3) Type your text and Press Esc
-4) Type -> :wq and Press Enter to Save and Exit
+`-f` -> checks whether the argument is a regular file
+`-d` -> checks whether argument is a directory
 
-*Result ->* Successfully Executed linux process management commands and use Vi and Nano editor to create, edit, save and manage text files in ubuntu linux
+*Algorithm*
+1) Start the program
+2) Accept a path as a command line argument
+3) Check if the argument is a regular file using `-f`
+4) If true, display that it is a file
+5) Otherwise, check if it is a directory using `-d`
+6) If true display that it is a directory
+7) Otherwise, display that the given path does not exist
+8) Stop
+
+*Shell script*
+#!/bin/bash
+if [ -f "$1" ]
+then
+    echo "$1 is a file"
+elif [ -d "$1" ]
+then
+    echo "$1 is a directory"
+else
+    echo "$1 does not exist"
+fi
+
+*Result*
+Thus shell script was successfully executed to determine whether the given command line argument is a file or directory.
+
+Terminal output in screenshot is pasted on the page, but text is too small / blurry to read clearly.
+
