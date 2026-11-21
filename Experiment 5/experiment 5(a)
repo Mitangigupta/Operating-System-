@@ -36,5 +36,3 @@ fi
 *Result*
 Thus shell script was successfully executed to determine whether the given command line argument is a file or directory.
 
-Terminal output in screenshot is pasted on the page, but text is too small / blurry to read clearly.
-
